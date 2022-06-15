@@ -1,0 +1,15 @@
+<script>
+    function go(){
+            fetch('http://localhost:8082/eenbestelling').then(a=>{
+            return a.json();
+            }).then(
+            b =>{
+            console.log(b)
+            document.getElementById("toon").innerHTML = b.totalprice;
+            }
+            )
+            }
+</script>
+
+<button onclick="go()">go</button>
+<div id="toon"></div>

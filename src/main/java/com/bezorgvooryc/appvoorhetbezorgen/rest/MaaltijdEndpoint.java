@@ -25,8 +25,14 @@ public class MaaltijdEndpoint {
     }
 
     @PutMapping("/api/maaltijd/{id}")
-    public void updateMaaltijd(@PathVariable ("id") long id) {
+    public void updateMaaltijd(@PathVariable ("id") long id, @RequestBody Maaltijd m) {
+        m.setId(id);
+        ms.maakMaaltijdaan(m);
+    }
 
+    @DeleteMapping("/api/maaltijd/{id}")
+    public void deleteMaaltijd(@PathVariable("id") long id){
+        ms.deleteMaaltijd(id);
     }
 }
 

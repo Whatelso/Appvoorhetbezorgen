@@ -11,6 +11,15 @@ public class Klant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    private String naam;
     private String adres;
 
     public long getId() {

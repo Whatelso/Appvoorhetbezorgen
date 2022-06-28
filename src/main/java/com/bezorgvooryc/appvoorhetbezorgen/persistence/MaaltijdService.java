@@ -25,13 +25,15 @@ public class MaaltijdService {
         br.save(Maaltijd);
     }
 
-//    public Maaltijd vindMaaltijd(long id){
-//        Optional<Maaltijd> temp = br.findById(id);
-//        if (temp instanceof Maaltijd) {
-//            return temp;
-//        }
-//        return br.findById(id);
-//    }
+    public Maaltijd vindMaaltijd(long id){
+        Optional<Maaltijd> eten = br.findById(id);
+        if (eten.isPresent()){
+            return eten.get();
+        }
+        else{
+            return null;
+        }
+    }
 
     public void deleteMaaltijd(long id){
         br.deleteById(id);

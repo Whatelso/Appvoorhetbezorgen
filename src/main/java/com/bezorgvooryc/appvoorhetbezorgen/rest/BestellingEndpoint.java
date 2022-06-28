@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.bezorgvooryc.appvoorhetbezorgen.domein.Maaltijd;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
+
 
 @RestController
 public class BestellingEndpoint {
     @Autowired
     BestellingService bs;
+
+    @GetMapping("/status")
+    public String status(){
+        return "OK";
+    }
 
     @GetMapping("ffproberen")
     public String ffproberen(){
